@@ -1,0 +1,45 @@
+#include <iostream> <math.h>
+using namespace std;
+int main() {
+	int n;
+	cout << "n="; cin >> n;
+	switch (n)
+	{
+	case 1: {
+		  int a, b, c;
+		  cout << "a="; cin >> a;
+		  cout << "b="; cin >> b;
+		  cout << "c="; cin >> c;
+		  if (b <= a && b >= c) {
+			  a *= 2; b *= 2; c *= 2;
+		  }
+		  else {
+			  a = abs(a); b = abs(b); c = abs(c);
+		  }
+		  cout << a << " " << b << " " << c << endl; 
+	}break;
+	case 2:
+	{
+	int a, b = 0;
+	cout << "a="; cin >> a;
+	if (a % 10 == a / 100) b = a % 10;
+	else if (a % 10 == a / 10 % 10) b = a % 10;
+	else if (a / 100 == a / 10 % 10) b = a / 100;
+	else if (a / 100 == a / 10 % 10 == a % 10) b = a % 10;
+	else cout << "There are no identical digits in your three-digit number";
+	cout << b << endl; 
+	}break;
+	case 3:
+	{
+		double t, u, x = 1.426, y = -1.22, z = 3, pi = acos(-1);
+		cout.precision(20);
+		t = (2 * cos(x * pi / 180 - (pi / 6))) / (0.5 + pow(sin(y * pi / 180), 2));
+		u = 1 + ((pow(z, 2)) / (3 + (pow(z, 2) / 5)));
+		cout << t << " " << u << endl;
+		if (t > u) cout << true;
+		else if (t < u) cout << false; 
+                else cout<<"Значения t и u равны"<<endl;
+	} break;
+	default: cout << "You entered a number that is out of scope" << endl;
+	}
+}
